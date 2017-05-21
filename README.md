@@ -3,7 +3,7 @@
 This is the code for a shallow GAN using a MNIST dataset. To run the code, simply do:
  ..code-block::bash
 
-     python _init_.py 
+     python gan.py 
 
 The directory shallow_gan will be created which will hold all results and model parameters, including confusion matrices. All you need will be available in the directory and is easily navigable. Since it's a shallow one layer system, the images obtained are note very clear. A deeper system will produce better results. 
 
