@@ -1,4 +1,4 @@
-#Shallow General Adversarial Convolutional Network
+# Shallow General Adversarial Convolutional Network
 
 This is the code for a shallow GAN using a MNIST dataset. To run the code, simply do:
  ..code-block::bash
@@ -7,7 +7,7 @@ This is the code for a shallow GAN using a MNIST dataset. To run the code, simpl
 
 The directory shallow_gan will be created which will hold all results and model parameters, including confusion matrices. All you need will be available in the directory and is easily navigable. Since it's a shallow one layer system, the images obtained are note very clear. A deeper system will produce better results. 
 
-#Pre-requisites
+## Pre-requisites
 
 This code uses the [Yann toolbox](http://yann.readthedocs.io/en/latest/index.html) internally to run, so that needs to be set up properly. Instructions on how to setup the toolbox is provided in the website. 
 
