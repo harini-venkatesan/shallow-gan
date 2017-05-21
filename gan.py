@@ -22,7 +22,8 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
                 "id"                  : "main"
                         }
 
-  """ 
+  
+""" 
   Optimizers:
   creates the protocol required for learning. 
   Parameters:
@@ -43,18 +44,18 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
   returns : optimizer object
 
 
-  """
+"""
 
 
 
-    dataset_params  = {
+dataset_params  = {
                             "dataset"   : dataset,
                             "type"      : 'xy',
                             "id"        : 'data'
-                    }
+                  }
 
 
-   """
+"""
     Dataset:
      This module initializes the dataset to the network class and provides all dataset related functionalities. 
      It also provides for dynamically loading and caching dataset batches. 
@@ -75,9 +76,9 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
 
 
          
-   """
+"""
 
-    visualizer_params = {
+visualizer_params = {
                     "root"       : 'shallow_gan/',
                     "frequency"  : 1,
                     "sample_size": 225,
@@ -85,9 +86,9 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
                     "debug_functions" : False,
                     "debug_layers": True,  
                     "id"         : 'main'
-                        }  
+                     }  
 
-   """
+"""
     Visualizer:
        Visualizer saves down images to visualize. 
       The initilizer only initializes the directories for storing visuals. 
@@ -99,8 +100,7 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
 
       Parameters:	
             verbose – Similar to any 3-level verbose in the toolbox.
-            visualizer_init_args –
-            visualer_params is a dictionary of the form:
+            
 
           visualizer_init_args = {
                   	"root"       : <location to save the visualizations at>,
@@ -120,21 +120,21 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
                 		}
 		Returns: A visualizer object.
 
-   """
+"""
                       
     # intitialize the network with a datastream, visualizer and an optimizer
 
     net = gan (     borrow = True,
                     verbose = verbose )     
 
-    """
+"""
       add_module(type, params=None, verbose=2): used to add a module to net
 
             type: which module to add. Options are 'datastream', 'visualizer', 'optimizer' and 'resultor'
             params: dicitionary as used above
 	    verbose: similar to the rest of the toolbox
 
-    """                  
+"""                  
     
     
     net.add_module ( type = 'datastream', 
@@ -153,7 +153,7 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
                     ) 
 
 
-    """
+"""
       add_layer()
    	Parameters:
 
@@ -187,7 +187,7 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
 		layer_type – If value supply, else it is default 'discriminator'. For other layers, if the layer class takes an argument type, supply 				that argument here as layer_type. merge layer for instance will use this arugment as its type argument.
      
 
-    """
+"""
 
     #z - latent space created by random layer
     net.add_layer(      type = 'random',
@@ -322,7 +322,7 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
                 verbose = verbose )
 
 
-   """
+"""
    This function builds the backprop network, and makes the trainer, tester and validator theano functions. 
    The trainer builds the trainers for a particular objective layer and optimizer.
 
@@ -337,7 +337,7 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
 		verbose – Similar to the rest of the toolbox.
 
 
-   """
+"""
 
                     
     learning_rates = (0.05, 0.01)  
@@ -351,8 +351,7 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
                show_progress = True,
                early_terminate = True,
                verbose = verbose)
-
-  """
+"""
     Training function of the network. Calling this will begin training.
 
 		Parameters:	
@@ -364,7 +363,7 @@ def shallow_gan_mnist ( dataset = None, verbose = 1 ):
 			learning_rates – (annealing_rate, learning_rates ... ) length must be one more than epochs Default is (0.05, 0.01, 0.001)
 
 
-  """
+"""
                            
     return net
 
